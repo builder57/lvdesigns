@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livanika | Earthy Aesthetics</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">LIVANIKA</div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('shop')">Shop</a></li>
+            <li><a href="#" onclick="showPage('product')">Product</a></li>
+            <li><a href="#" onclick="showPage('lookbook')">Lookbook</a></li>
+            <li><a href="#" onclick="showPage('reviews')">Reviews</a></li>
+            <li><a href="#" onclick="showPage('about')">About</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            <li><a href="#" onclick="showPage('faq')">FAQ</a></li>
+            <li><a href="#" onclick="showPage('policy')">Policy</a></li>
+            <li><a href="#" onclick="showPage('cart')">Cart</a></li>
+        </ul>
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+    </nav>
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Your Bag</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <p style="text-align:center; color:#999; margin-top:2rem;">Your cart is empty.</p>
+        </div>
+        <div class="cart-total">
+            <div style="display:flex; justify-content:space-between; margin-bottom:1rem; font-weight:600;">
+                <span>Total</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn" style="width:100%" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- PAGE 1: HOME -->
+    <section id="home" class="page-section active">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Earth Tones & Pastel Dreams</h1>
+                <p>Sustainable fashion for the modern soul.</p>
+                <button class="btn" onclick="showPage('shop')">Shop Collection</button>
+            </div>
+        </div>
+        <div class="container">
+            <h2 class="section-title">New Arrivals</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Dress">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Sage Linen Dress</h3>
+                        <p class="product-price">$89.00</p>
+                        <button class="add-btn" onclick="addToCart('Sage Linen Dress', 89, 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1550614000-4b9519e02a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Top">
+                    </div>
+                    <div class="product-info">
+<h3 class="product-title">Dusty Pink Blouse</h3>
+                        <p class="product-price">$55.00</p>
+                        <button class="add-btn" onclick="addToCart('Dusty Pink Blouse', 55, 'https://images.unsplash.com/photo-1550614000-4b9519e02a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Skirt">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cream Pleated Skirt</h3>
+                        <p class="product-price">$72.00</p>
+                        <button class="add-btn" onclick="addToCart('Cream Pleated Skirt', 72, 'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 2: SHOP -->
+    <section id="shop" class="page-section">
+        <div class="container">
+            <h2 class="section-title">Shop Collection</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Dress">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Sage Linen Dress</h3>
+                        <p class="product-price">$89.00</p>
+                        <button class="add-btn" onclick="addToCart('Sage Linen Dress', 89, 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1550614000-4b9519e02a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Top">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Dusty Pink Blouse</h3>
+                        <p class="product-price">$55.00</p>
+                        <button class="add-btn" onclick="addToCart('Dusty Pink Blouse', 55, 'https://images.unsplash.com/photo-1550614000-4b9519e02a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Skirt">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cream Pleated Skirt</h3>
+                        <p class="product-price">$72.00</p>
+                        <button class="add-btn" onclick="addToCart('Cream Pleated Skirt', 72, 'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Coat">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Earth Trench Coat</h3>
+                        <p class="product-price">$145.00</p>
+                        <button class="add-btn" onclick="addToCart('Earth Trench Coat', 1
+45, 'https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 3: PRODUCT DETAIL -->
+    <section id="product" class="page-section">
+        <div class="container">
+            <h2 class="section-title">Product Details</h2>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Product Detail">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Sage Linen Dress</h3>
+                    <p class="product-price">$89.00</p>
+                    <p style="margin: 1rem 0; color: #666;">Sustainable, breathable linen fabric perfect for any season. Features a relaxed fit with elegant draping.</p>
+                    <button class="btn" onclick="addToCart('Sage Linen Dress', 89, 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 4: LOOKBOOK -->
+    <section id="lookbook" class="page-section">
+        <div class="container">
+            <h2 class="section-title">Lookbook</h2>
+            <div class="lookbook-grid">
+                <div class="lookbook-item">
+                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Model 1">
+                    <div class="lookbook-caption">Spring Collection 2024</div>
+                </div>
+                <div class="lookbook-item">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Model 2">
+                    <div class="lookbook-caption">Summer Vibes</div>
+                </div>
+                <div class="lookbook-item">
+                    <img src="https://images.unsplash.com/photo-1550614000-4b9519e02a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Model 3">
+                    <div class="lookbook-caption">Autumn Essentials</div>
+                </div>
+                <div class="lookbook-item">
+                    <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Model 4">
+                    <div class="lookbook-caption">Winter Cozy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 5: REVIEWS -->
+    <section id="reviews" class="page-section">
+        <div class="container">
+            <h2 class="section-title">Customer Reviews</h2>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Absolutely love the quality and fit! The earthy tones are exactly what I was looking for."</p>
+                    <p class="reviewer-name">- Sarah M.</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Fast shipping and beautiful packaging. The clothes are sustainable and stylish!"</p>
+                    <p class="reviewer-name">- Emma L.</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★☆</div>
+                    <p class="review-text">"Great quality, will definitely order again. The pastel colors are so soft."</p>
+                    <p class="reviewer-name">- Jessica K.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 6: ABOUT -->
+    <section id="about" class="page-section">
+        <div class="container">
+            <h2 class="section-title
